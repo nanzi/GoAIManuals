@@ -326,6 +326,10 @@ Tuning options:
   --mu0
 ```
 
+ --nrsymm 利用镜像方法剪枝，兼顾棋盘行棋礼仪
+
 --lambda0   --mu0   = leela/alphagozero style，退让目数争取更稳定的胜率
+
 --lambda0.5 --mu0.5 = 使用虚拟贴目产生不退让风格，SAI需要获得领先目数\*参数=虚拟贴目的额外目数才可胜利
+
 --lambda0.5 --mu0   = SAI默认设置，SAI自动在追求更高胜率招法的同时，兼顾了目数的胜利，但不额外增加优势方的贴目负担 
