@@ -15,26 +15,26 @@ New networks Leela Zero, a Sensible Artificial Intelligence
 colab环境
 
 ```colab
-//安装编译工具
+# 安装编译工具
 !apt install cmake g++ libboost-dev libboost-program-options-dev libboost-filesystem-dev opencl-headers ocl-icd-libopencl1 ocl-icd-opencl-dev zlib1g-dev
 
-//克隆项目源代码
+# 克隆项目源代码
 !rm -rf sai
 !git clone --recursive https://github.com/sai-dev/sai
 !cd sai
 
-//编译
+# 编译
 !cd sai && mkdir build
 !cd sai/build && cmake ..
 !cd sai/build && cmake --build .
 
-//测试
+# 测试
 !cd sai/build/&& ./tests
 
-//复制sai程序至子文件夹autogtp下
+# 复制sai程序至子文件夹autogtp下
 !cd sai/build && cp sai autogtp
 
-//运行
+# 运行
 !cd sai/build/autogtp/ && ./autogtp --url http://sai.unich.it/ --username $username --password $passwd -g2 -m100| grep minute
 ```
 
@@ -46,10 +46,45 @@ colab环境
 略
 ### 客户端加载
 
-Lizzie客户端代码：用于本地棋谱分析与人机对弈自测
+Lizzie客户端设置：
+
 ```bash
-sai-0.17.4-gpu\sai.exe -g --weights sai-0.17.4-gpu\networks\$Hash值.gz --noponder -b 0 -p 0 -v 0 -r 3 -m 0 --gpu 0 --gpu 1 --lambda 0.5 --mu 0 --komi 7.5 --nrsymm --timemanage auto
+$Path路径\sai-0.17.4-gpu\sai.exe -g --weights $Path路径\sai-0.17.4-gpu\networks\$Hash值.gz --noponder -b 0 -p 0 -v 0 -r 3 -m 0 --gpu 0 --gpu 1 --lambda 0.5 --mu 0 --komi 7.5 --nrsymm --timemanage auto
 ```
+
+* Lizzie客户端设置说明
+    * 该示例可以用于本地棋谱分析，空格开启或暂停，无限计算
+    * lizzie的对弈设置中，自带限时、限计算量设置，可用于人机对弈自测
+        1. genmove模式
+        2. 分析模式
+        3. [time_settings](https://www.gnu.org/software/gnugo/gnugo_19.html)
+            * 该参数基于比赛用时规则设计而来
+            * 不能在Lizzie客户端设置中直接写入该参数
+            * 通过对弈面板设置以上#1、#2模式的用时、用计算量方法
+            * Lizzie的对弈面板设置较该参数更强大
+    * 网棋需要修改 -b 网络延迟参数、删除--noponder开启全程思考模式、以及棋风调整
+
+
+Sabaki客户端设置
+
+```bash
+# Path 引擎路径
+$Path路径\sai-0.17.4-gpu\sai.exe
+
+# Arguments 参数设置
+-g --weights $Path路径\sai-0.17.4-gpu\networks\$Hash值.gz --noponder -b 0 -p 0 -v 0 -r 3 -m 0 --gpu 0 --gpu 1 --lambda 0.5 --mu 0 --komi 7.5 --nrsymm --timemanage auto
+
+# Initial commands 初始化参数
+time_settings 0 1 0
+
+```
+
+ time_settings 需具体参考比赛规则设置([设置方法](https://www.gnu.org/software/gnugo/gnugo_19.html))
+
+
+### SAI引擎特有参数说明
+
+[官方Wiki](https://github.com/sai-dev/sai/wiki/Features)
 
 * --lambda 0 --mu 0 = LeelaZ/AlphaZ风格，退让目数争取更稳定的胜率
 * --lambda 0.5 --mu 0.5 = 使用虚拟贴目
