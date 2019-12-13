@@ -13,7 +13,8 @@ New networks Leela Zero, a Sensible Artificial Intelligence
 
 ## 编译/安装SAI
 colab环境
-```python
+
+```colab
 //安装编译工具
 !apt install cmake g++ libboost-dev libboost-program-options-dev libboost-filesystem-dev opencl-headers ocl-icd-libopencl1 ocl-icd-opencl-dev zlib1g-dev
 
