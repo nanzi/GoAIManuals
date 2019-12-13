@@ -12,7 +12,30 @@ New networks Leela Zero, a Sensible Artificial Intelligence
 
 
 ## 编译/安装SAI
-略
+colab环境
+```python
+//安装编译工具
+!apt install cmake g++ libboost-dev libboost-program-options-dev libboost-filesystem-dev opencl-headers ocl-icd-libopencl1 ocl-icd-opencl-dev zlib1g-dev
+
+//克隆项目源代码
+!rm -rf sai
+!git clone --recursive https://github.com/sai-dev/sai
+!cd sai
+
+//编译
+!cd sai && mkdir build
+!cd sai/build && cmake ..
+!cd sai/build && cmake --build .
+
+//测试
+!cd sai/build/&& ./tests
+
+//复制sai程序至子文件夹autogtp下
+!cd sai/build && cp sai autogtp
+
+//运行
+!cd sai/build/autogtp/ && ./autogtp --url http://sai.unich.it/ --username $username --password $passwd -g2 -m100| grep minute
+```
 
 ## 运行SAI
 
