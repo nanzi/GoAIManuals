@@ -21,7 +21,8 @@ colab环境
 # 克隆项目源代码
 !rm -rf sai
 !git clone --recursive https://github.com/sai-dev/sai
-!cd sai
+!cd sai && git branch
+!cd sai && git shortlog
 
 # 编译
 !cd sai && mkdir build
@@ -60,9 +61,9 @@ $Path路径\sai-0.17.4-gpu\sai.exe -g --weights $Path路径\sai-0.17.4-gpu\netwo
         3. [time_settings](https://www.gnu.org/software/gnugo/gnugo_19.html)
             * 该参数基于比赛用时规则设计而来
             * 不能在Lizzie客户端设置中直接写入该参数
-            * 通过对弈面板设置以上#1、#2模式的用时、用计算量方法
+            * 通过对弈面板设置以上#a、#b模式的用时、用计算量方法
             * Lizzie的对弈面板设置较该参数更强大
-    * 网棋需要修改 -b 网络延迟参数、删除--noponder开启全程思考模式、以及棋风调整
+    * 网棋需要修改 -b 网络延迟参数、删除--noponder开启全程思考模式、以及棋风调整--lambda 0
 
 
 Sabaki客户端设置
