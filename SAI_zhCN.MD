@@ -12,6 +12,9 @@ New networks Leela Zero, a Sensible Artificial Intelligence
 
 
 ## 编译/安装SAI
+
+本节提供私有编译SAI的方法，如果已获取官方提供的版本，可跳过本节。
+
 colab环境
 
 ```colab
@@ -53,7 +56,7 @@ Lizzie客户端设置：
 $Path路径\sai-0.17.4-gpu\sai.exe -g --weights $Path路径\sai-0.17.4-gpu\networks\$Hash值.gz --noponder -b 0 -p 0 -v 0 -r 3 -m 0 --gpu 0 --gpu 1 --lambda 0.5 --mu 0 --komi 7.5 --nrsymm --timemanage auto
 ```
 
-* Lizzie客户端设置说明
+* Lizzie客户端设置说明（对弈必看）
     * 该示例可以用于本地棋谱分析，空格开启或暂停，无限计算
     * lizzie的对弈设置中，自带限时、限计算量设置，可用于人机对弈自测
         1. genmove模式
@@ -83,7 +86,7 @@ time_settings 0 1 0
  time_settings 需具体参考比赛规则设置([设置方法](https://www.gnu.org/software/gnugo/gnugo_19.html))
 
 
-### SAI引擎特有参数说明
+### SAI引擎特有参数说明（必读）
 
 [官方Wiki](https://github.com/sai-dev/sai/wiki/Features)
 
@@ -102,7 +105,9 @@ time_settings 0 1 0
    * 部分引擎需要在棋盘参数上额外说明贴目，其优先级为最高，如lizzie
 * --symm 利用镜像方法剪枝 （示例中未使用，与--nrsymm冲突）
 * --nrsymm 利用镜像方法剪枝（同--symm），兼顾棋盘行棋礼仪（下手方第一手行在右上角）
+* --noladdercode 关闭启发式征子探索（示例中未添加），默认开启设置，极大提升征子判断
 * -j 支持日本数目规则（示例中未添加）
+
 
 ## 支持SAI
 
