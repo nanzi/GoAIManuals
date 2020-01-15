@@ -35,6 +35,6 @@ SAI权重
 
 ## 终端工具 Cmd Tools for Clients
 
-* validation(From LeelaZ)
+* （validation(From LeelaZ)）[Clients/LeelaZ/validation.md]
 
 * gogui-twogtp(From GoGui)
