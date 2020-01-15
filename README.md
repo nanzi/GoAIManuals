@@ -1,9 +1,9 @@
-# GoAIManuals
+# 围棋AI手册 Go AI Manuals
 go,baduk,weiqi,manuals,command line
 
 
 
-## Engines
+## 引擎 Engines
 
 * Leela Zero
 
@@ -25,16 +25,16 @@ Leela权重
 
 SAI权重
 
-## GUI Clients
+## 图形前端 GUI Clients
 
-* GoGui
+* [GoGui](https://github.com/Remi-Coulom/gogui)
 
-* Lizzie
+* [Lizzie](https://github.com/featurecat/lizzie) [yzy_version](https://github.com/yzyray/lizzie_adv)
 
-* Sabaki
+* [Sabaki](https://github.com/SabakiHQ/Sabaki)
 
-## Cmd Tools for Clients
+## 终端工具 Cmd Tools for Clients
 
-* Validition
+* validation(From LeelaZ)
 
-* Two-gtp
+* gogui-twogtp(From GoGui)
