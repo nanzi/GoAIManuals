@@ -27,11 +27,11 @@ SAI权重
 
 ## 图形前端 GUI Clients
 
-* [GoGui](https://github.com/Remi-Coulom/gogui)
+* GoGui ([release](https://github.com/Remi-Coulom/gogui))
 
-* [Lizzie](https://github.com/featurecat/lizzie) [yzy_version](https://github.com/yzyray/lizzie_adv)
+* Lizzie ([release](https://github.com/featurecat/lizzie)) ([yzy_version](https://github.com/yzyray/lizzie_adv))
 
-* [Sabaki](https://github.com/SabakiHQ/Sabaki)
+* Sabaki ([release](https://github.com/SabakiHQ/Sabaki))
 
 ## 终端工具 Cmd Tools for Clients
 
