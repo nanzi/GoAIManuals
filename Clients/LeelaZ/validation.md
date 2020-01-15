@@ -20,6 +20,11 @@ $ ./validation -g 2 -k sai_lz_match_sgf -n abc.gz -o "-g -v 400 -r 5 -w" -n path
 $ ./validation -g 2 -k sai_sailoadlz_match_sgf -n abc.gz -o "-g -v 400 -r 5 -w" -n path_to_lz_weight.gz -o "-g -v 400 -r 5 -w" --sai --sai
 ```
 
+* -g 2 : 同时跑2个比赛
+* -k path_to_folder : 保存比赛棋谱的文件夹
+* -n path_to_weight : 权重（与-o连用，前后区分2个引擎）
+* -o "args line" : 引擎参数（与-n连用，前后区分2个引擎）
+* --path_to_engine : 引擎程序（2个引擎）
 
 
 ## 比赛结果的置信度表
