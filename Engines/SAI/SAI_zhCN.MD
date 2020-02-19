@@ -15,6 +15,11 @@ New networks Leela Zero, a Sensible Artificial Intelligence
 
 本节提供私有编译SAI的方法，如果已获取官方提供的版本，可跳过本节。
 
+debian/ubuntu环境的额外安装
+```bash
+$ apt install qt5-default git build-essential 
+```
+
 colab环境
 
 ```colab
@@ -90,23 +95,23 @@ time_settings 0 1 0
 
 [官方Wiki](https://github.com/sai-dev/sai/wiki/Features)
 
-* --lambda 0 --mu 0 = LeelaZ/AlphaZ风格，退让目数争取更稳定的胜率
-* --lambda 0.5 --mu 0.5 = 使用虚拟贴目
+* --lambda 0 --mu 0 LeelaZ/AlphaZ风格，退让目数争取更稳定的胜率
+* --lambda 0.5 --mu 0.5 使用虚拟贴目
     * SAI优势下产生贴目负担，形成不退让风格
     * SAI需要获得 虚拟贴目 = [领先目数 * 递减函数(mu参数)] 的额外目数才可胜利
     * SAI劣势的时候产生贴目补贴，不致棋招变形。
     * SAI需要失去 虚拟贴目 = [落后目数 * 递减函数(mu参数)] 的额外目数才会失败
     * lambda参数0.5可变，mu参数0.5可变
-* --lambda 0.5 --mu 0 = SAI默认设置
+* --lambda 0.5 --mu 0 SAI默认设置
     * SAI自动在追求更高胜率招法的同时，兼顾了目数的胜利(lambda)
     * SAI不额外产生虚拟贴目，造成行棋负担和补贴(mu)
-    * lambda参数0.5可变
-* --komi7.5 调整任意贴目，是SAI较LeelaZ更优胜的地方，7.5可变（+-361.5，步长0.5）
-   * 部分引擎需要在棋盘参数上额外说明贴目，其优先级为最高，如lizzie
+    * lambda参数0.5可变，自对弈使用0.1，与LeelaZ等zero系列AI对战可以设置为0
+* --komi 7.5 调整任意贴目，是SAI较LeelaZ更优胜的地方，7.5可变（+-361.5，步长0.5）
+   * 部分引擎需要在棋盘参数上额外说明贴目，其优先级为最高，如lizzie（引擎设置面板）
 * --symm 利用镜像方法剪枝 （示例中未使用，与--nrsymm冲突）
 * --nrsymm 利用镜像方法剪枝（同--symm），兼顾棋盘行棋礼仪（下手方第一手行在右上角）
 * --noladdercode 关闭启发式征子探索（示例中未添加），默认开启设置，极大提升征子判断
-* -j 支持日本数目规则（示例中未添加）
+* -j 支持日本数目规则（示例中未添加，与日本规则有区别）
 
 
 ## 支持SAI
