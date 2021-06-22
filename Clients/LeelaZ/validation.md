@@ -24,8 +24,12 @@ $ ./validation -g 2 -k sai_sailoadlz_match_sgf -n abc.gz -o "-g -v 400 -r 5 -w" 
 * -k path_to_folder : 保存比赛棋谱的文件夹
 * -n path_to_weight : 权重（与-o连用，前后区分2个引擎）
 * -o "args line" : 引擎参数（与-n连用，前后区分2个引擎）
-* --path_to_engine : 引擎程序（2个引擎）
+* --path_to_engine : 引擎程序（2个引擎）不同版本的alidation可能需要增加空格(-- program)
 
+> 一个使用绝对路径的colab实例
+```bash
+!/content/sai_in_colab/validation -g 2 -k /content/sai_in_colab/sai_vs_lz -n /content/sai_in_colab/networks/d351f06e446ba10697bfd2977b4be52c3de148032865eaaf9efc9796aea95a0c.gz -o "-g -p1600 --noponder -t 1 -q -d -r 0 -w" -n /content/sai_in_colab/networks/b03edd5216a19ac79033e74214799c3c1d9d91d2077bab121783a398c865c38a.gz -o "-g -p1600 --noponder -t 1 -q -d -r 0 -w" -- /content/sai_in_colab/sai -- /content/sai_in_colab/sai 
+```
 
 ## 比赛结果的置信度表
 
